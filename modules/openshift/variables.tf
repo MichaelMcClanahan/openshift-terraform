@@ -34,6 +34,12 @@ variable "node_count" {
   # Passed in via module call in main.tf
 }
 
+variable "infra_count" {
+  description = "Number of OpenShift infra node servers"
+
+  # Passed in via module call in main.tf
+}
+
 variable "vpc_cidr" {
   description = "CIDR address for VPC"
   default     = "10.0.0.0/16"

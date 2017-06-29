@@ -46,3 +46,19 @@ output "jumpgate_private_dns" {
 output "jumpgate_private_ip" {
   value = "${aws_instance.jumpgate.private_ip}"
 }
+
+output "infra_public_dns" {
+  value = "${aws_instance.infra.public_dns}"
+}
+
+output "infra_public_ip" {
+  value = "${aws_instance.infra.public_ip}"
+}
+
+output "infra_private_dns" {
+  value = "${aws_instance.infra.private_dns}"
+}
+
+output "infra_private_ip" {
+  value = "${aws_instance.infra.private_ip}"
+}

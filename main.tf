@@ -13,4 +13,5 @@ module "openshift" {
   public_key_path = "${var.public_key_path}"
   master_count    = "${var.master_count}"
   node_count      = "${var.node_count}"
+  infra_count     = "${var.infra_count}"
 }

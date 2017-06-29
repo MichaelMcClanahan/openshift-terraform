@@ -46,3 +46,19 @@ output "jumpgate_private_dns" {
 output "jumpgate_private_ip" {
   value = "${module.openshift.jumpgate_private_ip}"
 }
+
+output "infra_public_dns" {
+  value = "${module.openshift.infra_public_dns}"
+}
+
+output "infra_public_ip" {
+  value = "${module.openshift.infra_public_ip}"
+}
+
+output "infra_private_dns" {
+  value = "${module.openshift.infra_private_dns}"
+}
+
+output "infra_private_ip" {
+  value = "${module.openshift.infra_private_ip}"
+}
