@@ -160,21 +160,21 @@ resource "aws_instance" "jumpgate" {
     Project = "openshift"
   }
 
-  provisioner "file" {
-    source      = "${path.module}/files/inventory.cfg"
-    destination = "/etc/ansible/hosts"
-  }
-
-  # provisioner "remote-exec" {
-  #   script = "${path.module}/files/deploy.sh"
-
-  #   connection {
-  #     host                = "${aws_instance.master.private_ip}"
-  #     user                = "ec2-user"
-  #     private_key         = "${file("/Users/michaelmcclanahan/.ssh/id_rsa")}"
-  #     bastion_host        = "${aws_instance.jumpgate.public_dns}"
-  #     bastion_user        = "ec2-user"
-  #     bastion_private_key = "${file("/Users/michaelmcclanahan/.ssh/id_rsa")}"
-  #   }
+  # provisioner "file" {
+  #   source      = "${path.module}/files/inventory.cfg"
+  #   destination = "/etc/ansible/hosts"
   # }
+
+  provisioner "remote-exec" {
+    script = "${path.module}/files/deploy.sh"
+
+    connection {
+      host                = "${aws_instance.master.private_ip}"
+      user                = "ec2-user"
+      private_key         = "${file("/Users/michaelmcclanahan/.ssh/id_rsa")}"
+      bastion_host        = "${aws_instance.jumpgate.public_dns}"
+      bastion_user        = "ec2-user"
+      bastion_private_key = "${file("/Users/michaelmcclanahan/.ssh/id_rsa")}"
+    }
+  }
 }

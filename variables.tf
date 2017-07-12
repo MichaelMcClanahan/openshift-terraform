@@ -30,5 +30,5 @@ variable "node_count" {
 
 variable "infra_count" {
   description = "Number of OpenShift infra node servers"
-  default     = 1
+  default     = 2
 }
